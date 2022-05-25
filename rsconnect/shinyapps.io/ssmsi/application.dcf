@@ -1,0 +1,13 @@
+name: application
+title: application
+username:
+account: ssmsi
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6240301
+bundleId: 5943570
+url: https://ssmsi.shinyapps.io/application/
+when: 1653486085.55069
+lastSyncTime: 1653486085.55071
+asMultiple: FALSE
+asStatic: FALSE
