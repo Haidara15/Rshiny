@@ -26,6 +26,7 @@ ListeIndicateurs<-sort(unique(subset(base$Indicateur,base$Indicateur!="NonRensei
 ################################# Interface Utilisateur ##################################################################################
 ###########################################################################################################################################
 ui<-fluidPage(
+  
 tags$head(
 tags$script(HTML("
 function screen_graphique(identifiant) {
@@ -112,7 +113,7 @@ div(class="row",style="margin-left:2%;margin-right:2%;margin-top:2%;",
               actionButton("",inputId="bouton_screen",icon =icon('external-link-alt'),onclick = "screen_graphique(document.getElementById('graphique'));"),
               withSpinner(highchartOutput('graphique',height="600px"),
                           type=7,
-                          hide.ui=TRUE 
+                          hide.ui=FALSE 
                           
                           ),  
               style="border:1px solid #C0C0C0;background-color:#FFFFFF;margin-bottom:3%"),
@@ -414,7 +415,7 @@ output$table <-DT::renderDataTable({
         formatter = JS(
           "function() {
             if(this.x=='2020'| this.x=='2021'){   
-             return '<span>●</span>' ;
+             return '<span>\u25CF</span>' ;
              } else {
             return null;}}")))      
     ###################################################################################### Chart for plotBands###########################################################
@@ -582,7 +583,7 @@ output$table <-DT::renderDataTable({
     
     ReactivePlot()  
     
-    }) #%>% bindCache(data_temporalite())
+    }) %>% bindCache(data_temporalite())
 
   output$descriptif<-renderUI({
     fluidRow(class="desc",HTML(paste0("<p> <h4> Pour en savoir plus : </h4> </p> ",as.character(unique(data_informations()$description)))))})  
