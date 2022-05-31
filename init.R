@@ -1,6 +1,6 @@
 my_packages = c("shiny","shinydashboard","shinybusy","shinythemes","shinyWidgets",
                 
-                "readxl","tidyverse","DT","highcharter","shinyjs","shinycssloaders",
+                "readxl","tidyverse","DT","highcharter","lubridate","shinyjs","shinycssloaders",
                 
                 "openxlsx","writexl")
 
